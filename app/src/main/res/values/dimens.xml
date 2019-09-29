@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_padding">12dp</dimen>
+    <dimen name="result_margin_top">16sp</dimen>
+    <dimen name="result_margin_bottom">20sp</dimen>
+    <dimen name="copy_margin_left">4dp</dimen>
+</resources>

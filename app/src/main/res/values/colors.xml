@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+<!--    0x7f020000	colorAccent	rgb8(0xffd81b60)-->
+<!--    <color name="colorText">#7f020003</color> 0x7f020003	colorText	rgb8(0xff0f0f0f)-->
+<!--    <color name="colorText">#7f020003</color>0x7f020004	colorTextInverse	rgb8(0xfff0f0f0)-->
+</resources>
