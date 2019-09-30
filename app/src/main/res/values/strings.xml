@@ -2,6 +2,11 @@
     <string name="app_name">Translator</string>
     <string name="description">Перевод текста из кириллицы в латиницу</string>
     <string name="hint_for_edit_text">Введите ваш текст кириллицей</string>
+    <string name="checkbox_uppercase">Заглавные</string>
+    <string name="checkbox_numerals">Цифры</string>
+    <string name="checkbox_special_characters">Спецсимволы</string>
+    <string name="generate_password">Сгенерировать новый пароль</string>
+    <string name="generate">Генерировать</string>
 
     <string-array name="cyrillic">
         <item>й</item>

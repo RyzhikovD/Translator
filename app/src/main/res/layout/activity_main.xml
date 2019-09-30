@@ -12,38 +12,133 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/description"
-        android:textAppearance="@android:style/TextAppearance.Medium"
-        />
+        android:textAppearance="@android:style/TextAppearance.Medium" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/result_frame">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageButton
                 android:id="@+id/copy_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/copy_margin_left"
-                android:src="@drawable/ic_content_copy_24dp"/>
+                android:src="@drawable/ic_content_copy_24dp" />
+
             <TextView
                 android:id="@+id/text_result"
+                style="@style/ResultTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/activity_padding"
+                android:padding="@dimen/result_padding"
                 android:textAppearance="@style/ResultTextAppearance"
-                tools:text="Result"
-                style="@style/ResultTextView"
-                />
+                tools:text="Result" />
         </LinearLayout>
     </RelativeLayout>
+
     <EditText
         android:id="@+id/edit_source"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_for_edit_text"
         android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/generate_password_padding_top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/generate_password"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="0"
+            android:theme="@style/SeekBar" />
+
+        <TextView
+            android:id="@+id/seek_bar_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/checkbox_uppercase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/checkbox_uppercase"
+            android:theme="@style/CheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkbox_numerals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_numerals"
+            android:theme="@style/CheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkbox_special_characters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_special_characters"
+            android:theme="@style/CheckBox" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/result_frame">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/copy_generated_password_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/copy_margin_left"
+                android:src="@drawable/ic_content_copy_24dp" />
+
+            <TextView
+                android:id="@+id/generated_password_text_view"
+                style="@style/ResultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/result_padding"
+                android:textAppearance="@style/ResultTextAppearance"
+                tools:text="Password" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/generate_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/generate_margin"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/generate" />
 </LinearLayout>
