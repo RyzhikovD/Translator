@@ -22,6 +22,7 @@
 
     <style name="CheckBox">
         <item name="android:colorAccent">@android:color/holo_green_light</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="SeekBar">

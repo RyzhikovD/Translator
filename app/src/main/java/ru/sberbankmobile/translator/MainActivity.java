@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
     private TextView resultTextView;
     private TextView seekBarText;
     private TextView generatedPasswordTextView;
+    private View qualityCircle;
+    private TextView passwordQualityTextView;
     private String[] cyrillic;
     private String[] latin;
     private PasswordsHelper helper;
@@ -56,6 +58,8 @@ public class MainActivity extends Activity {
         generatePasswordButton = findViewById(R.id.generate_password);
         copyPasswordButton = findViewById(R.id.copy_generated_password_button);
         generatedPasswordTextView = findViewById(R.id.generated_password_text_view);
+        passwordQualityTextView = findViewById(R.id.password_quality);
+        qualityCircle = findViewById(R.id.quality_circle);
 
         helper = new PasswordsHelper(cyrillic, latin);
         clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
@@ -80,6 +84,25 @@ public class MainActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 resultTextView.setText(helper.convert(s));
+                String quality = PasswordsHelper.quality(resultTextView.getText().toString());
+                passwordQualityTextView.setText(quality);
+                switch (quality) {
+                    case "Слабый пароль":
+                        qualityCircle.setBackgroundResource(R.drawable.rose_circle);
+                        break;
+                    case "Нормальный пароль":
+                        qualityCircle.setBackgroundResource(R.drawable.orange_circle);
+                        break;
+                    case "Хороший пароль":
+                        qualityCircle.setBackgroundResource(R.drawable.yellow_circle);
+                        break;
+                    case "Отличный пароль":
+                        qualityCircle.setBackgroundResource(R.drawable.green_circle);
+                        break;
+                    default:
+                        qualityCircle.setBackgroundResource(R.drawable.red_circle);
+                        break;
+                }
             }
 
             @Override
@@ -87,6 +110,7 @@ public class MainActivity extends Activity {
 
             }
         });
+
 
         seekBarText.setText("8 символов");
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
